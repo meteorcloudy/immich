@@ -4,6 +4,7 @@ dev:
 dev-down:
 	docker compose -f ./docker/docker-compose.dev.yml down --remove-orphans
 
+
 dev-update:
 	@trap 'make dev-down' EXIT; COMPOSE_BAKE=true docker compose -f ./docker/docker-compose.dev.yml up --build -V --remove-orphans
 
